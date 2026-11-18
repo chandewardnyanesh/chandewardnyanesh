@@ -1,0 +1,92 @@
+{
+  "_comment": "Everything the cards render comes from this file. Edit here, re-run scripts/render_cards.py, never touch the Python.",
+
+  "identity": {
+    "name": "Dnyanesh Chandewar",
+    "handle": "chandewardnyanesh",
+    "label": "AI SYSTEMS · QUANT FINANCE · BUILDING",
+    "one_liner": "I build AI systems that actually finish the work.",
+    "sub_line": "Agentic AI. Quant finance. A decade of building from India to the world. Founder of CyberCore.",
+    "portrait": "assets/portrait.jpg",
+    "monogram": "DC"
+  },
+
+  "theme": {
+    "bg": "#080809",
+    "bg_card": "#0f0f13",
+    "bg_inset": "#0b0b0e",
+    "border": "#1c1c24",
+    "border_hover": "#2a2a36",
+    "accent": "#f59e0b",
+    "accent_2": "#fbbf24",
+    "accent_soft": "#fde68a",
+    "purple": "#7c3aed",
+    "text_primary": "#ededf0",
+    "text_secondary": "#7a7a92",
+    "text_muted": "#44445a",
+    "green": "#22c55e",
+    "radius": 18,
+    "radius_sm": 12
+  },
+
+  "fonts": {
+    "sans": { "family": "Inter", "weights": { "400": "assets/fonts/Inter-400.woff", "600": "assets/fonts/Inter-600.woff", "700": "assets/fonts/Inter-700.woff", "800": "assets/fonts/Inter-800.woff" } },
+    "mono": { "family": "FiraCode", "weights": { "400": "assets/fonts/FiraCode-400.woff", "500": "assets/fonts/FiraCode-500.woff" } }
+  },
+
+  "tiles": [
+    {
+      "id": "site",
+      "eyebrow": "PORTFOLIO",
+      "title": "dnyaneshchandewar.com",
+      "blurb": "Work, case studies, writing",
+      "href": "https://dnyaneshchandewar.com",
+      "glyph": "site"
+    },
+    {
+      "id": "linkedin",
+      "eyebrow": "LINKEDIN",
+      "title": "in/dnyaneshchandewar",
+      "blurb": "Daily posts on AI systems",
+      "href": "https://www.linkedin.com/in/dnyaneshchandewar/",
+      "glyph": "linkedin"
+    },
+    {
+      "id": "email",
+      "eyebrow": "EMAIL",
+      "title": "chandewardnyanesh@gmail.com",
+      "blurb": "Reply in 24–48 hours",
+      "href": "mailto:chandewardnyanesh@gmail.com",
+      "glyph": "mail"
+    }
+  ],
+
+  "repos": [
+    { "name": "kronos-nse-terminal",       "tag": "QUANT",      "language": "Python", "stars": 12, "forks": 1, "blurb": "AI-powered NSE trading terminal built on Kronos. Live data, backtesting, signals." },
+    { "name": "agent-orchestration",       "tag": "AI SYSTEMS","language": "Python", "stars": 1,  "forks": 0, "blurb": "Multi-agent orchestration on LangGraph. Human-in-the-loop, ChromaDB memory, FastAPI." },
+    { "name": "earnings-engine",           "tag": "QUANT",      "language": "Python", "stars": 1,  "forks": 0, "blurb": "Predicts next-day post-earnings price direction for NSE and US equities." },
+    { "name": "nse-momentum-swing-bot",    "tag": "QUANT",      "language": "Python", "stars": 1,  "forks": 1, "blurb": "Breakout and momentum swing bot. Scoring, ATR exits, Telegram alerts, backtester." },
+    { "name": "nse-swing-screener",        "tag": "TOOLS",      "language": "HTML",   "stars": 1,  "forks": 0, "blurb": "Single-file NSE/BSE swing screener. Momentum dashboard and portfolio tracker." },
+    { "name": "options-pricing-calculator","tag": "QUANT",      "language": "Python", "stars": 1,  "forks": 0, "blurb": "Black-Scholes and Greeks calculator for index and stock options." }
+  ],
+
+  "language_colors": {
+    "Python": "#3572A5",
+    "HTML": "#e34c26",
+    "JavaScript": "#f1e05a",
+    "TypeScript": "#3178c6",
+    "Jupyter Notebook": "#DA5B0B",
+    "Shell": "#89e051"
+  },
+
+  "stagger": {
+    "_comment": "Seconds of head-start per card so the README plays top to bottom on load.",
+    "hero": 0.0,
+    "tiles": 0.55,
+    "tile_step": 0.12,
+    "chart": 1.0,
+    "repos": 1.4,
+    "repo_step": 0.1,
+    "graph": 2.1
+  }
+}

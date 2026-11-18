@@ -1,0 +1,64 @@
+name: Refresh profile cards
+
+on:
+  schedule:
+    # 02:47 UTC daily — 08:17 IST. Off the hour so it is not queued behind every
+    # other cron job on GitHub's scheduler.
+    - cron: "47 2 * * *"
+  push:
+    paths:
+      - "config.json"
+      - "scripts/**"
+      - "assets/**"
+      - ".github/workflows/profile-cards.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-cards
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install fonttools
+        run: python -m pip install --quiet "fonttools[woff]==4.55.3"
+
+      # Step 1 — refresh the data. GH_PAT is a fine-grained PAT with read:user;
+      # the default GITHUB_TOKEN cannot read a user's contribution calendar.
+      - name: Fetch contributions and repo stats
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: python scripts/fetch_contributions.py
+
+      # Step 2 — render the cards from that data.
+      - name: Render animated cards
+        run: python scripts/render_cards.py
+
+      # Step 3 — and the final-frame copies, so a screenshot is always one click away.
+      - name: Render static cards
+        env:
+          STATIC: "1"
+        run: python scripts/render_cards.py --out cards-static
+
+      - name: Commit if anything changed
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data cards cards-static
+          if git diff --cached --quiet; then
+            echo "no changes"
+            exit 0
+          fi
+          git commit -m "chore: refresh profile cards ($(date -u +%Y-%m-%d))"
+          git push

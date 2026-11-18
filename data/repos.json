@@ -1,0 +1,35 @@
+{
+ "generated_at": "2026-11-18T21:03:18+00:00",
+ "repos": {
+  "kronos-nse-terminal": {
+   "stars": 12,
+   "forks": 1,
+   "language": "Python"
+  },
+  "agent-orchestration": {
+   "stars": 1,
+   "forks": 0,
+   "language": "Python"
+  },
+  "earnings-engine": {
+   "stars": 1,
+   "forks": 0,
+   "language": "Python"
+  },
+  "nse-momentum-swing-bot": {
+   "stars": 1,
+   "forks": 1,
+   "language": "Python"
+  },
+  "nse-swing-screener": {
+   "stars": 1,
+   "forks": 0,
+   "language": "HTML"
+  },
+  "options-pricing-calculator": {
+   "stars": 1,
+   "forks": 0,
+   "language": "Python"
+  }
+ }
+}
